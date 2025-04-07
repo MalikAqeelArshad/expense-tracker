@@ -13,7 +13,7 @@ const Sidebar = () => {
          <div className="flex flex-col items-center mt-6">
             <Image
                alt="avatar"
-               src="avatar.jpg"
+               src="/avatar.jpg"
                width={96}
                height={96}
                className="object-cover size-24 rounded-full border-5 border-purple-100"
