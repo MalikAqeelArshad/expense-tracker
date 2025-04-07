@@ -6,7 +6,6 @@ import {
    XAxis,
    YAxis,
    Tooltip,
-   Legend,
    ResponsiveContainer,
 } from "recharts";
 import CustomTooltip from "./CustomTooltip";

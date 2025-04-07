@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SIDE_MENU_ITEMS } from "@/utils/data";
+import Image from "next/image";
 
 const Sidebar = () => {
    const pathname = usePathname();
@@ -10,10 +11,12 @@ const Sidebar = () => {
    return (
       <>
          <div className="flex flex-col items-center mt-6">
-            <img
+            <Image
                alt="avatar"
                src="avatar.jpg"
-               className="object-cover w-24 h-24 rounded-full border-5 border-purple-100"
+               width={96}
+               height={96}
+               className="object-cover size-24 rounded-full border-5 border-purple-100"
             />
             <h4 className="mt-2 font-medium text-gray-800 dark:text-gray-200">Aqeel Malik</h4>
             <a

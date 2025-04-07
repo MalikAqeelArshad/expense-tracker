@@ -1,6 +1,7 @@
 import { useState } from "react";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { LuImage, LuX } from "react-icons/lu";
+import Image from "next/image";
 
 interface EmojiPickerPopupProps {
    icon: string;
@@ -9,7 +10,7 @@ interface EmojiPickerPopupProps {
 
 const EmojiPickerPopup = ({ icon, onSelect }: EmojiPickerPopupProps) => {
    const [isOpen, setIsOpen] = useState(false);
-   const handleSelectedEmoji = (emoji: any) => {
+   const handleSelectedEmoji = (emoji: EmojiClickData) => {
       onSelect(emoji?.imageUrl || "");
       setIsOpen(false);
    };
@@ -18,7 +19,17 @@ const EmojiPickerPopup = ({ icon, onSelect }: EmojiPickerPopupProps) => {
       <div className="flex flex-col items-start gap-5">
          <div className="flex items-center gap-4 cursor-pointer" onClick={() => setIsOpen(true)}>
             <div className="size-14 p-3 shrink-0 flex items-center justify-center rounded-full shadow bg-purple-100 text-purple-500 text-2xl">
-               {icon ? <img src={icon} className="size-12 object-contain" /> : <LuImage />}
+               {icon ? (
+                  <Image
+                     src={icon}
+                     alt="icon"
+                     width={48}
+                     height={48}
+                     className="size-12 object-contain"
+                  />
+               ) : (
+                  <LuImage />
+               )}
             </div>
             <p className="font-semibold text-sm shrink-0">{icon ? "Change Icon" : "Pick Icon"}</p>
             {!icon && <small>* Please select an icon once you click the icon.</small>}

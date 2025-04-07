@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useMemo } from "react";
 import { Pie, PieChart, ResponsiveContainer, Tooltip, Legend } from "recharts";
 import CustomTooltip from "./CustomTooltip";
 
@@ -9,15 +9,14 @@ interface PieChartProps {
    name?: string;
    width?: string | number;
    height?: string | number;
-   [key: string]: any;
 }
 
 const CustomPieChart = ({ data, label, name, width = "100%", height = 300 }: PieChartProps) => {
-   const totalAmount = React.useMemo(() => {
+   const totalAmount = useMemo(() => {
       return data?.reduce((acc, curr) => acc + curr.amount, 0);
    }, []);
 
-   const LabelValue = ({ cx, cy }: any) => {
+   const LabelValue = ({ cx, cy }: { cx: number; cy: number }) => {
       return (
          label && (
             <text x={cx} y={cy} dy={-15} textAnchor="middle" dominantBaseline="central">

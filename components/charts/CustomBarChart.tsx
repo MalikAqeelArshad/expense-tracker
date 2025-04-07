@@ -1,14 +1,5 @@
 "use client";
-import {
-   Bar,
-   BarChart,
-   CartesianGrid,
-   XAxis,
-   YAxis,
-   Tooltip,
-   Legend,
-   ResponsiveContainer,
-} from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import CustomTooltip from "./CustomTooltip";
 import { CHART_DATA } from "@/utils/data";
 
