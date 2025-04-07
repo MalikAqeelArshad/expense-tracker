@@ -23,4 +23,4 @@ This is just Frontend UI/UX responsive application, Later I'll connect with Back
 
 ## Deploy on Vercel
 
-Please visit to [Next.js Expense Tracker Application](https://expense-tracker-nextjs15.vercel.app) for more details.
+Please visit to [Next.js Expense Tracker Application](https://expense-tracker-nextjs15.vercel.app) [https://expense-tracker-nextjs15.vercel.app] for more details.
